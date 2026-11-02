@@ -1,4 +1,17 @@
 def whisper_cipher(text: str, shift: int) -> str:
+    lower = "abcdefghijklmnopqrstuvwxyz"
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result = ""
+    
+    for char in text:
+        new_char = char
+        for i in range(26):
+            if char == lower[i]:
+                new_char = lower[(i + shift) % 26]
+            elif char == upper[i]:
+                new_char = upper[(i + shift) % 26]
+        result += new_char
+    return result
 
 
 if __name__ == "__main__":
