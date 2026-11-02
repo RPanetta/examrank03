@@ -1,11 +1,9 @@
 def hidenp(small: str, big: str) -> bool:
-    count = 0
     i = 0
     for char in big:
-        if count < len(small) and char == small[i]:
-            count += 1
+        if i < len(small) and char == small[i]:
             i += 1
-    return count == len(small)
+    return i == len(small)
 
 
 if __name__ == "__main__":
